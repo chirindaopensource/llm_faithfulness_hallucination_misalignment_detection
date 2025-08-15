@@ -1,0 +1,148 @@
+﻿# ==============================================================================
+# Requirements.txt for Semantic Divergence Metrics (SDM) Framework
+# 
+# Professional, implementation-grade dependency specification for the
+# real-time quantitative framework for auditing and steering LLM generative
+# strategies. This requirements file ensures reproducible environments for
+# Masters and PhD-level implementations requiring methodological rigor.
+#
+# Framework: Prompt-Response Semantic Divergence Metrics for Faithfulness
+# Hallucination and Misalignment Detection in Large Language Models
+# Paper: Halperin, I. (2025) - arXiv:2508.10192
+#
+# Author: CS Chirinda
+# Python Version Requirement: >=3.8,<3.12
+# Last Updated: 2025-01-15
+# ==============================================================================
+
+# --- Core Scientific Computing Stack ---
+# NumPy: Fundamental numerical computing, vector operations, matrix algebra
+# Critical for embedding manipulations and statistical calculations
+numpy>=1.24.0,<2.0.0
+
+# Pandas: Structured data manipulation and analysis
+# Essential for organizing experimental data (prompts, responses, embeddings, clusters)
+pandas>=2.0.0,<3.0.0
+
+# SciPy: Advanced scientific computing and statistical functions
+# Required for entropy, KL divergence, Jensen-Shannon divergence, Wasserstein distance
+scipy>=1.10.0,<2.0.0
+
+# --- Machine Learning and Clustering Libraries ---
+# Scikit-learn: Machine learning algorithms and metrics
+# Core dependency for K-Means, Agglomerative Clustering, Silhouette Analysis
+scikit-learn>=1.3.0,<2.0.0
+
+# PyTorch: Deep learning framework
+# Required as backend for sentence-transformers, GPU acceleration support
+torch>=2.0.0,<3.0.0
+
+# Sentence Transformers: Transformer-based sentence embeddings
+# Critical for generating contextualized embeddings (BERT, Sentence-BERT, Qwen models)
+sentence-transformers>=2.2.0,<3.0.0
+
+# --- Natural Language Processing ---
+# NLTK: Natural Language Toolkit
+# Required for advanced text preprocessing and linguistic analysis
+nltk>=3.8.0,<4.0.0
+
+# --- API Integration and HTTP Clients ---
+# OpenAI: Official OpenAI API client
+# Essential for GPT-4o integration and batch processing
+openai>=1.12.0,<2.0.0
+
+# --- Data Validation and Configuration Management ---
+# Pydantic: Data validation using Python type annotations
+# Critical for robust configuration validation and API response parsing
+# Note: Using v1.x for stability in production environments
+pydantic>=1.10.0,<2.0.0
+
+# --- Utility Libraries ---
+# Tenacity: Retry mechanisms with exponential backoff
+# Essential for fault-tolerant API interactions and network resilience
+tenacity>=8.2.0,<9.0.0
+
+# TQDM: Progress bars and monitoring
+# Required for async operation tracking during batch processing
+tqdm>=4.65.0,<5.0.0
+
+# Packaging: Version parsing and comparison utilities
+# Required for version compatibility checks and dependency management
+packaging>=23.0,<25.0
+
+# --- Optional Performance Enhancements ---
+# Uncomment the following for enhanced performance in production environments:
+
+# # CuPy: GPU-accelerated NumPy alternative (requires CUDA)
+# # cupy-cuda11x>=12.0.0,<13.0.0
+
+# # Intel Math Kernel Library optimizations for NumPy/SciPy
+# # intel-extension-for-pytorch>=2.0.0,<3.0.0
+
+# # Memory optimization for large-scale embedding operations
+# # psutil>=5.9.0,<6.0.0
+
+# --- Development and Testing Dependencies ---
+# Uncomment the following section for development environments:
+
+# # Testing framework
+# # pytest>=7.2.0,<8.0.0
+# # pytest-asyncio>=0.21.0,<1.0.0
+# # pytest-mock>=3.10.0,<4.0.0
+
+# # Code quality and formatting
+# # black>=23.0.0,<24.0.0
+# # flake8>=6.0.0,<7.0.0
+# # mypy>=1.0.0,<2.0.0
+# # isort>=5.12.0,<6.0.0
+
+# # Documentation generation
+# # sphinx>=6.0.0,<7.0.0
+# # sphinx-autodoc-typehints>=1.22.0,<2.0.0
+
+# --- Platform-Specific Notes ---
+# 
+# Windows Users:
+# - Ensure Microsoft Visual C++ 14.0+ is installed for compiling native extensions
+# - Consider using Anaconda/Miniconda for streamlined dependency management
+#
+# macOS Users (Apple Silicon):
+# - Use native ARM64 builds where available for optimal performance
+# - PyTorch with Metal Performance Shaders (MPS) support is automatically included
+#
+# Linux Users:
+# - CUDA support requires compatible NVIDIA drivers and CUDA toolkit
+# - Consider using conda-forge for optimized scientific computing packages
+#
+# GPU Acceleration:
+# - PyTorch will automatically detect and utilize available CUDA/ROCm/MPS devices
+# - For CPU-only deployment, no additional configuration is required
+#
+# Memory Requirements:
+# - Minimum 8GB RAM for small-scale experiments
+# - Recommend 16GB+ RAM for production workloads with large embedding models
+# - SSD storage recommended for efficient model caching and data I/O
+
+# ==============================================================================
+# Installation Instructions:
+# 
+# Standard Installation:
+#   pip install -r requirements.txt
+#
+# Development Installation:
+#   pip install -r requirements.txt
+#   # Uncomment development dependencies above and run:
+#   # pip install -r requirements.txt
+#
+# Conda Installation (Recommended for Scientific Computing):
+#   conda create -n sdm-framework python=3.10
+#   conda activate sdm-framework
+#   pip install -r requirements.txt
+#
+# GPU-Accelerated Installation:
+#   # Install CUDA-enabled PyTorch first:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+#   # Then install remaining dependencies:
+#   pip install -r requirements.txt
+#
+# ==============================================================================
